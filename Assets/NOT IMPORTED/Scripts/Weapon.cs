@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour {
     public GameObject LookingAt;
     public GameObject explosion;
     public float explosionRadius;
+    public float explosionCenterDamage = 100;
     public float Range = 20;
     public float RPM = 30;
     private float RPMTimer = 0;
@@ -140,6 +141,13 @@ public class Weapon : MonoBehaviour {
         {
             if (col.tag == "Enemy")
             {
+                float dist = Vector3.Distance(target.transform.position, col.transform.position);
+                float dam = dist / explosionRadius * explosionCenterDamage;
+                if (dist < .5)
+                {
+                    dam = explosionCenterDamage;
+                }
+                col.GetComponent<IDamageable>().ApplyDamage(dam);
                 //damage
             }
         }

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23749165835035100}
   - component: {fileID: 195477702634330316}
   - component: {fileID: 114760092303483080}
+  - component: {fileID: 114947168865893878}
   m_Layer: 0
   m_Name: Enemy (2)
   m_TagString: Enemy
@@ -44,6 +45,7 @@ GameObject:
   - component: {fileID: 23558884012886670}
   - component: {fileID: 195856849650390356}
   - component: {fileID: 114662257234313254}
+  - component: {fileID: 114773956441347530}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -79,6 +81,7 @@ GameObject:
   - component: {fileID: 23533848455480016}
   - component: {fileID: 195080964993860100}
   - component: {fileID: 114746138496338714}
+  - component: {fileID: 114486049259623268}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -99,6 +102,7 @@ GameObject:
   - component: {fileID: 23293303683782832}
   - component: {fileID: 195352081455207172}
   - component: {fileID: 114908896287372450}
+  - component: {fileID: 114793781576808958}
   m_Layer: 0
   m_Name: Enemy (4)
   m_TagString: Enemy
@@ -119,6 +123,7 @@ GameObject:
   - component: {fileID: 23175339561725448}
   - component: {fileID: 195587934514202282}
   - component: {fileID: 114396751083899564}
+  - component: {fileID: 114215529514064674}
   m_Layer: 0
   m_Name: Enemy (3)
   m_TagString: Enemy
@@ -404,6 +409,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777317258830664}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114215529514064674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777317258830664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e327ed7234e0ad244b0c6955fb99be7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  DamageMitigation: 0
 --- !u!114 &114396751083899564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -417,6 +435,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 195587934514202282}
   destination: {fileID: 0}
+--- !u!114 &114486049259623268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1467367283258726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e327ed7234e0ad244b0c6955fb99be7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  DamageMitigation: 0
 --- !u!114 &114662257234313254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,6 +487,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 195477702634330316}
   destination: {fileID: 0}
+--- !u!114 &114773956441347530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124271207685906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e327ed7234e0ad244b0c6955fb99be7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  DamageMitigation: 0
+--- !u!114 &114793781576808958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514791407781914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e327ed7234e0ad244b0c6955fb99be7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  DamageMitigation: 0
 --- !u!114 &114908896287372450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -469,6 +526,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 195352081455207172}
   destination: {fileID: 0}
+--- !u!114 &114947168865893878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009537672880806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e327ed7234e0ad244b0c6955fb99be7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  DamageMitigation: 0
 --- !u!136 &136026015215218576
 CapsuleCollider:
   m_ObjectHideFlags: 1

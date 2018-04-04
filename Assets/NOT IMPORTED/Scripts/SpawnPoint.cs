@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour {
     public Transform SpawnLocation;
     public Transform Destination;
+    public float MitigationModifier;
     public GameObject Enemy;
     public void Spawn(GameObject enemy = null)
     {
@@ -19,7 +20,24 @@ public class SpawnPoint : MonoBehaviour {
                 child.GetComponent<WalkTo>().destination = Destination;
             }
         }
+        else
+        {
+            enemy.GetComponent<WalkTo>().destination = Destination;
+        }
         GameObject spawned = Instantiate(enemy, SpawnLocation.position, SpawnLocation.rotation, SpawnLocation);
+        if (spawned.tag == "Enemy Squad")
+        {
+            foreach (Transform child in spawned.transform)
+            {
+                child.SetParent(SpawnLocation);
+                child.GetComponent<Enemy>().DamageMitigation = MitigationModifier;
+            }
+            Destroy(spawned);
+        }
+        else
+        {
+            spawned.GetComponent<Enemy>().DamageMitigation = MitigationModifier;
+        }
         //if(spawned.tag == "Enemy Squad")
         //{
         //    foreach (Transform child in spawned.transform)

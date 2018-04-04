@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour {
     public struct WaveSettings
     {
         public GameObject Enemy;
+        public float DamageMitigationModifier;
         public int NumberOfEnemies;
         public float WaveTimeDuration;
     }
@@ -25,6 +26,7 @@ public class WaveSpawner : MonoBehaviour {
         if (Waves.Count > 0)
         {
             CurrentWaveSettings = Waves[0];
+            GetComponent<SpawnPoint>().MitigationModifier = CurrentWaveSettings.DamageMitigationModifier;
         }
         else
         {
@@ -65,8 +67,14 @@ public class WaveSpawner : MonoBehaviour {
                 {
                     SpawnTimer = 0;
                     NumberOfEnemiesSpawned = 0;
-                    Debug.Log("no more waves, repeating wave " + currentWave);
+                    if (CurrentWaveSettings.DamageMitigationModifier == 0)
+                    {
+                        CurrentWaveSettings.DamageMitigationModifier = 0.05f;
+                    }
+                    CurrentWaveSettings.DamageMitigationModifier *= 1.1f;
+                    Debug.Log("no more waves, repeating wave " + currentWave + " with damage mitigation upped to" + CurrentWaveSettings.DamageMitigationModifier);
                 }
+                GetComponent<SpawnPoint>().MitigationModifier = CurrentWaveSettings.DamageMitigationModifier;
             }
         }
     }
